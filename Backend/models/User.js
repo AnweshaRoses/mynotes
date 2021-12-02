@@ -1,4 +1,6 @@
 const mongoose = require('mongoose');
+const { Schema } = mongoose;
+// all the user details that we will be storing at mongo db
 const UserSchema = new Schema({
     name:{
         type: String,
@@ -18,4 +20,5 @@ const UserSchema = new Schema({
         default: Date.now
     },
   });
-  module.exports=mongoose.model('user',UserSchema);
+  const User=mongoose.model('user',UserSchema);
+  module.exports=User

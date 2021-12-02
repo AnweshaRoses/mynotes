@@ -4,20 +4,17 @@
   "description": "mynotes-save your notes on the cloud and access it from anywhere and anytime",
   "main": "index.js",
   "scripts": {
-    
     "serve": "nodemon index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-
   "author": "",
   "license": "ISC",
   "dependencies": {
     "express": "^4.17.1",
+    "express-validator": "^6.13.0",
     "mongoose": "^6.0.14"
   },
   "devDependencies": {
     "nodemon": "^2.0.15"
-    
   }
-
 }
