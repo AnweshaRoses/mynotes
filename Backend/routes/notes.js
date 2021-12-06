@@ -48,7 +48,7 @@ router.post('/addnote', fetchuser, [
 // Route 3: Update an exsisting note: PUT "/api/notes/updatenote". Login required
 //we are checking for the id so we update the note user wants to update (each note has unique id)
 router.put('/updatenote/:id', fetchuser, async (req, res) => {
-    // const { title, description, tag } = req.body;
+    const { title, description, tag } = req.body;
     try {
 
         //create a newNote object
@@ -74,10 +74,10 @@ router.put('/updatenote/:id', fetchuser, async (req, res) => {
     }
 })
 
-// Route 4: Update an exsisting note: DELETE"/api/notes/deletenote". Login required
+// Route 4: delete an exsisting note: DELETE"/api/notes/deletenote". Login required
 
 router.delete('/deletenote/:id', fetchuser, async (req, res) => {
-    const { title, description, tag } = req.body;
+    // const { title, description, tag } = req.body;
     try {
 
         // Find the note to be deleted and delete it it 
