@@ -96,5 +96,5 @@ router.delete('/deletenote/:id', fetchuser, async (req, res) => {
         res.status(500).send("Internal sever error");
     }
 })
-
+// "serve": "nodemon index.js",
 module.exports = router
