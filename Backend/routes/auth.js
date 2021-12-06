@@ -107,3 +107,5 @@ router.post('/getuser', fetchuser, async (req, res) => {
 });
 
 module.exports = router
+
+// eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjFhOWFiNDVhY2FkNjE0YjRhOTQwMDY2In0sImlhdCI6MTYzODc2ODY1Mn0.AwdIN7XHRhNr-w-2Ib-EHMrBBwji-m5PCLQ8sZ_aIe4
