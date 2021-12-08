@@ -17,12 +17,14 @@ function App() {
     {/* After the new update you dont need to use exact tag and switch has been changed to Routes */}
     <Router>
     <Navbar/>
+      <div className="container">
      <Routes>
           <Route path="/"  element={<Home/>}>
           </Route>
           <Route  path="/about" element={<About/>}>
           </Route>
         </Routes>
+      </div>
     </Router>
     </NoteState>
     </>
