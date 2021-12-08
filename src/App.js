@@ -8,10 +8,12 @@ import {
 import Navbar from './components/Navbar';
 import { Home } from './components/Home';
 import About from './components/About';
+import NoteState from './context/notes/NoteState';
 
 function App() {
   return (
     <>
+    <NoteState>
     {/* After the new update you dont need to use exact tag and switch has been changed to Routes */}
     <Router>
     <Navbar/>
@@ -22,6 +24,7 @@ function App() {
           </Route>
         </Routes>
     </Router>
+    </NoteState>
     </>
   );
 }
