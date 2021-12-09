@@ -20,6 +20,15 @@ const NoteState =(props)=>{
           "tag": "girl code",
           "date": "2021-12-08T23:19:35.666Z",
           "__v": 0
+        },
+        {
+          "_id": "61b13d87519895c7a59d7f44",
+          "user": "61a9ab45acad614b4a940066",
+          "title": "complete c++",
+          "description": "the girl code",
+          "tag": "girl code",
+          "date": "2021-12-08T23:19:35.666Z",
+          "__v": 0
         }
       ]
       const [notes, setNotes] = useState(notesInitial)
