@@ -51,8 +51,13 @@ const NoteState =(props)=>{
       }
 
       // Delete a note
-      const deleteNote=()=>{
-
+      const deleteNote=(id)=>{
+        // TODO: API CALL
+        //filter always takes an arrow function
+        //note.id is the id we gave for delete note check Noteitem.js
+        const newNotes=notes.filter((note)=>{return note._id!==id}) //we need to return to else it will throw error 
+        //so basicaly if the id matches then we delete
+        setNotes(newNotes)
       }
       
       // edit a note
