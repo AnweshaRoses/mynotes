@@ -5,15 +5,16 @@ import Noteitem from './Noteitem'
 
 
 const Notes = () => {
-    const [note, setNote] = useState({title: "",description:"",tag:"default"})
+    const [note, setNote] = useState({etitle: "",edescription:"",etag:"default"})
     const context = useContext(noteContext)
     const { notes, getNotes } = context
     useEffect(() => {
         getNotes();
         // eslint-disable-next-line
     }, [])
-    const updateNote = (note) => {
+    const updateNote = (currentNote) => {
         ref.current.click();
+        setNote({etitle:currentNote.title,edescription:currentNote.description,etag:currentNote.tag});
 
     }
     const ref = useRef(null)
@@ -30,7 +31,7 @@ const Notes = () => {
             <button ref={ref} type="button" className="btn btn-primary d-none" data-bs-toggle="modal" data-bs-target="#exampleModal">
                 Launch demo modal
             </button>
-            <div className="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div className="modal fade" id="exampleModal" tabIndex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                 <div className="modal-dialog">
                     <div className="modal-content">
                         <div className="modal-header">
@@ -41,21 +42,21 @@ const Notes = () => {
                             <form action="">
                                 <div className="mb-2">
                                     <label htmlFor="title" className="form-label"></label>
-                                    <input type="Text" className="form-control" id="etitle" name="etitle" placeholder="Edit Title" onChange={onChange} />
+                                    <input type="Text" className="form-control" id="etitle" name="etitle" value={note.etitle} placeholder="Edit Title" onChange={onChange} />
                                 </div>
                                 <div className="mb-2">
                                     <label htmlFor="description" className="form-label"></label>
-                                    <textarea className="form-control" id="edescription" rows="14" name="edescription" onChange={onChange} placeholder="Edit Description"></textarea>
+                                    <textarea className="form-control" id="edescription" value={note.edescription} rows="14" name="edescription" onChange={onChange} placeholder="Edit Description"></textarea>
                                 </div>
                                 <div className="mb-2">
                                     <label htmlFor="tag" className="form-label"></label>
-                                    <textarea className="form-control" id="etag" rows="1" name="etag" onChange={onChange} placeholder="Edit tag"></textarea>
+                                    <textarea className="form-control" id="etag" value={note.etag} rows="1" name="etag" onChange={onChange} placeholder="Edit tag"></textarea>
                                 </div>
 
                             </form>
                         </div>
                         <div className="modal-footer">
-                            <button type="button" className="btn btn-primary">Update Note</button>
+                            <button onClick={handleClick} type="button" className="btn btn-primary">Update Note</button>
                         </div>
                     </div>
                 </div>
