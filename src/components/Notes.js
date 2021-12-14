@@ -57,7 +57,7 @@ const Notes = () => {
                                 </div>
                                 <div className="mb-2">
                                     <label htmlFor="description" className="form-label"></label>
-                                    <textarea className="form-control" id="edescription" value={note.edescription} rows="14" name="edescription" onChange={onChange} placeholder="Edit Description"></textarea>
+                                    <textarea className="form-control" id="edescription" value={note.edescription} rows="14" name="edescription" onChange={onChange} minLength={1} required placeholder="Edit Description"></textarea>
                                 </div>
                                 <div className="mb-2">
                                     <label htmlFor="tag" className="form-label"></label>
@@ -68,7 +68,7 @@ const Notes = () => {
                         </div>
                         <div className="modal-footer">
                             <button ref={refClose} type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                            <button  onClick={handleClick} type="button" className="btn btn-primary">Update Note</button>
+                            <button disabled={note.edescription.length<1}  onClick={handleClick} type="button" className="btn btn-primary">Update Note</button>
                         </div>
                     </div>
                 </div>
